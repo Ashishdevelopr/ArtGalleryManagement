@@ -1,0 +1,67 @@
+#root {
+  max-width: 1280px;
+  padding-top: 1rem;
+  text-align: center;
+  height: 100vh;
+}
+
+body{
+  background-image: url(./image/backgroundArt.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgba(0,0,0,0.3);
+  font-family: 'Clash Display', sans-serif;
+  overflow: hidden;
+  padding: 0px;
+  margin: 0px;
+}
+
+
+
+.main-title{
+  font-size: 73px;
+  margin: 10px;
+  font-weight: bolder;
+}
+
+.outer-auth{
+  display: flex;
+  justify-content: center;
+}
+.inner-style{
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: repeat(1fr, 1);
+  width: 40%;
+  padding:25px;
+  margin-bottom: 1rem;
+}
+
+.label{
+  text-align: start;
+  font-size: 16px;
+  font-weight: 500;
+}
+.email, .pass, .name{
+  padding: 8px 17px;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 10px 10px 20px 10px;
+}
+
+.auth-button{
+  padding: 8px 17px;
+  margin: 7px;
+  border: none;
+  border-radius: 5px;
+  background-color: bisque;
+  font-size: 16px;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 700;
+  text-decoration: none !important;
+}
