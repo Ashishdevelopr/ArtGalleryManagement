@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import "./Form.css"
 
 const Form = () => {
   const [input, setInput] = useState({
@@ -35,14 +36,13 @@ const Form = () => {
       ...input,
       [e.target.name]: e.target.value
     })
-
   }
 
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if (!input.name || !input.artist || !input.desc || !input.category || !input.year || input.price) {
-      setEmptyError("fill all the details")
+    if (!input.name || !input.artist || !input.desc || !input.category || !input.year || !input.price) {
+      setEmptyError("Please Fill all the Details")
       return
     }
     setEmptyError('')
@@ -55,9 +55,6 @@ const Form = () => {
       },
       body: JSON.stringify(input)
     })
-
-    const result = await response.json()
-    console.log(result)
   }
 
   const artCategory = ["Realism","Expressionism", "Abstract", "Impressionism", "Surrealism", "Pop Art", "Minimalism", "Cubism", "Landscape", "Still Life", "Portraiture", "Figurative", "Other"]
@@ -65,7 +62,7 @@ const Form = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className='input-layout'onSubmit={handleSubmit}>
         <label>Art Name: </label>
         < input onChange={handleInputs} type="text" name="name" />
         <label>Artist Name: </label>
@@ -87,8 +84,8 @@ const Form = () => {
         <input onChange={handleInputs} type="number" name="price" min="0" step="1" placeholder="$100" />
         <label>Art Image: </label>
         <input onChange={handleInputs} type="file" name="image" />
-        <h1>{emptyError}</h1>
-        <button type='submit'>Submit</button>
+        <p className='error-message'>{emptyError}</p>
+        <button className='submit-btn' type='submit'>Submit</button>
       </form>
     </div>
   )

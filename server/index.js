@@ -4,6 +4,7 @@ const cors = require("cors")
 const bodyParser = require ("body-parser")
 const mongoose  = require("mongoose")
 require('dotenv').config();
+const art = require("./DbSchema")
 
 server.use(cors())
 server.use(bodyParser.json())
@@ -17,14 +18,17 @@ mongoose.connect(process.env.MONGODB_URI)
 })
 
 server.post('/', (req,res)=>{
-    console.log(req.body)
     const data = req.body
-    res.send(data)
+    const artItem = new art(data)
+    artItem.save()
+    .then((result) => {
+        console.log('Data inserted:', result);
+      })
+      .catch((error) => {
+        console.error('Error inserting data:', error.message);
+      });
 })
 
-server.get("/",(req,res)=>{
-    res.send("hello")
-})
 
 
 server.listen(5050, ()=>{

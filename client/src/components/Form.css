@@ -1,0 +1,63 @@
+.input-layout {
+    background-color: white;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px 40px 20px 40px;
+    margin-bottom: 1.5rem;
+}
+
+.input-layout label{
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right:2px ;
+}
+
+.input-layout input{
+    padding: 8px 17px;
+    font-family: 'Clash Display', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 3px 3px 3px 10px;
+}
+
+.input-layout select{
+    border: 2px solid black;
+    border-radius: 3px;
+    padding: 8px 17px;
+    font-family: 'Clash Display', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    margin: 3px 3px 3px 10px;
+}
+
+.error-message{
+    font-size: 16px;
+    color: red;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+    text-align: start;
+}
+
+.submit-btn{
+    padding: 8px 17px;
+    margin: 7px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(92, 154, 246);
+    font-size: 16px;
+    font-family: 'Clash Display', sans-serif;
+    font-weight: 700;
+    transition: all ease 0.3s;
+}
+
+.submit-btn:hover{
+    background-color: black;
+    color: white;
+    transition: all ease 0.3s;
+}
