@@ -1,6 +1,5 @@
 const mongoose = require("mongoose")
 
-
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -10,22 +9,18 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    desc:{
-        type:String,
-        required:true
-    },
-    category:{
-        type:String,
-        required:true
-    },
-    year:{
-        type:Number,
-        required:true
-    },
-    price:{
-        type:Number,
-        required:true
-    },
+    // desc:{
+    //     type:String,
+    //     required:true
+    // },
+    // category:{
+    //     type:String,
+    //     required:true
+    // },
+    // year:{
+    //     type:Number,
+    //     required:true
+    // },
     // image:{
     //     type:file,
     //     required:true
