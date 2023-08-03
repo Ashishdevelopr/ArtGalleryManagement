@@ -41,16 +41,12 @@ const getAllUserArt = async(req,res)=>{
         })
 
     }
-    res.status(200).json({
-        success:true,
-        message:getAllArt
-    })
+    res.send(getAllArt)
 }
 
 //  delete user art by Id
 const deleteUserArtById = async(req,res)=>{
     const getId = req.params._id
-    console.log(getId)
     const deleteUserArt = await art.findByIdAndDelete(getId)
     res.json({
         success:true,

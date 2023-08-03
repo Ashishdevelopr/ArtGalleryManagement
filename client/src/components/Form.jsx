@@ -9,7 +9,6 @@ const Form = () => {
     desc: '',
     category: '',
     year: '',
-    price: '',
     image: ''
   })
 
@@ -41,13 +40,12 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if (!input.name || !input.artist || !input.desc || !input.category || !input.year || !input.price) {
+    if (!input.name || !input.artist || !input.desc || !input.category || !input.year) {
       setEmptyError("Please Fill all the Details")
       return
     }
     setEmptyError('')
-    console.log(input)
-
+    
     const response = await fetch("http://localhost:5050", {
       method: "POST",
       headers: {
@@ -57,18 +55,19 @@ const Form = () => {
     })
   }
 
-  const artCategory = ["Realism","Expressionism", "Abstract", "Impressionism", "Surrealism", "Pop Art", "Minimalism", "Cubism", "Landscape", "Still Life", "Portraiture", "Figurative", "Other"]
-
+  const artCategory = ["Realism", "Expressionism", "Abstract", "Impressionism", "Surrealism", "Pop Art", "Minimalism", "Cubism", "Landscape", "Still Life", "Portraiture", "Figurative", "Other"]
 
   return (
     <div>
-      <form className='input-layout'onSubmit={handleSubmit}>
+      <form className='input-layout' onSubmit={handleSubmit}>
         <label>Art Name: </label>
         < input onChange={handleInputs} type="text" name="name" />
-        <label>Artist Name: </label>
+        <label>Artist: </label>
         < input onChange={handleInputs} type="text" name="artist" />
-        <label>Art Description: </label>
+        <label>Description: </label>
         <input onChange={handleInputs} type="text" name="desc" />
+        <label>Creation Year: </label>
+        <input onChange={handleInputs} type="number" name="year" min="1200" max="2025" step="1" />
         <label>Art Category: </label>
         <select name="category" onChange={handleInputs}>
           <option value="" disabled selected>Select Art Type</option>
@@ -78,10 +77,6 @@ const Form = () => {
             </option>
           ))}
         </select>
-        <label>Creation Year: </label>
-        <input onChange={handleInputs} type="number" name="year" min="1200" max="2025" step="1" />
-        <label>Value of Art: </label>
-        <input onChange={handleInputs} type="number" name="price" min="0" step="1" placeholder="$100" />
         <label>Art Image: </label>
         <input onChange={handleInputs} type="file" name="image" />
         <p className='error-message'>{emptyError}</p>

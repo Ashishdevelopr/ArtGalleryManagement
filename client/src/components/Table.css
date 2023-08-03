@@ -1,0 +1,22 @@
+.art-view{
+    display: grid;
+  grid-template-columns: auto auto;
+  grid-gap:20px 50px;
+}
+
+.art-card{
+    background-color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    text-align: start;
+}
+
+.update, .delete{
+    border: 1.5px solid black;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: aquamarine;
+    font-weight: 600;
+    margin-left: 10px;
+}
