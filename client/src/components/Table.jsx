@@ -43,10 +43,9 @@ const Table = () => {
           <div className="art-data">
             <h4 className='title'>{`Art : ${data.name}`}</h4>
             <h3 className='artist-name'>{`Artist : ${data.artist}`}</h3>
-            <h3 className='art-year'>Creation: 2023</h3>
-            <h3 className='art-cat'>Category: Realism</h3>
-            <h5 className='art-desc'>Description: The art about inner peace after a great struggle.</h5>
-            <p>{`${data._id}`}</p>
+            <h3 className='art-year'>{`Creation Year : ${data.year}`}</h3>
+            <h3 className='art-cat'>{`Category: ${data.category}`}</h3>
+            <h5 className='art-desc'>{`Description: ${data.desc}`}</h5>
             <button className='update'>Update</button>
             <button className='delete'onClick={()=>deleteArt(data._id)}>Delete</button>
           </div>

@@ -46,7 +46,7 @@ const Form = () => {
     }
     setEmptyError('')
     
-    const response = await fetch("http://localhost:5050", {
+    const response = await fetch("http://localhost:5050/add-art", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -58,11 +58,11 @@ const Form = () => {
   const artCategory = ["Realism", "Expressionism", "Abstract", "Impressionism", "Surrealism", "Pop Art", "Minimalism", "Cubism", "Landscape", "Still Life", "Portraiture", "Figurative", "Other"]
 
   return (
-    <div>
-      <form className='input-layout' onSubmit={handleSubmit}>
+    <div className='input-layout'>
+      <form className="form-grid" onSubmit={handleSubmit}>
         <label>Art Name: </label>
         < input onChange={handleInputs} type="text" name="name" />
-        <label>Artist: </label>
+        <label>Artist Name: </label>
         < input onChange={handleInputs} type="text" name="artist" />
         <label>Description: </label>
         <input onChange={handleInputs} type="text" name="desc" />
@@ -70,18 +70,21 @@ const Form = () => {
         <input onChange={handleInputs} type="number" name="year" min="1200" max="2025" step="1" />
         <label>Art Category: </label>
         <select name="category" onChange={handleInputs}>
-          <option value="" disabled selected>Select Art Type</option>
+          <option disabled selected>Select Art Type</option>
           {artCategory.map((category, index) => (
             <option key={index} value={category}>
               {category}
             </option>
           ))}
         </select>
-        <label>Art Image: </label>
-        <input onChange={handleInputs} type="file" name="image" />
         <p className='error-message'>{emptyError}</p>
-        <button className='submit-btn' type='submit'>Submit</button>
+        {/* <label>Art Image: </label>
+        <input onChange={handleInputs} type="file" name="image" /> */}
       </form>
+        <div className='full-width'>
+        
+        <button className='submit-btn' type='submit'>Submit</button>
+        </div>
     </div>
   )
 }

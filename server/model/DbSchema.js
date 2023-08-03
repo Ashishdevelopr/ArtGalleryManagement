@@ -7,20 +7,22 @@ const userSchema = new mongoose.Schema({
     },
     artist:{
         type:String,
+        required:true,
+        unique : true
+    },
+    desc:{
+        type:String,
+        required:true,
+        unique : true
+    },
+    category:{
+        type:String,
         required:true
     },
-    // desc:{
-    //     type:String,
-    //     required:true
-    // },
-    // category:{
-    //     type:String,
-    //     required:true
-    // },
-    // year:{
-    //     type:Number,
-    //     required:true
-    // },
+    year:{
+        type:Number,
+        required:true
+    },
     // image:{
     //     type:file,
     //     required:true

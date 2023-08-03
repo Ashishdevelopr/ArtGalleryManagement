@@ -21,14 +21,11 @@ const addUserArt = async(req,res) =>{
 // GET User Art by Id
 const getUserArtById = async(req,res)=>{
     const getArt = req.params._id
-    console.log(getArt)
-
     const getUserArt = await art.findById(getArt)
     res.json({
         success:true,
         message:getUserArt
     })
-
 }
 
 // get user art all 
@@ -57,11 +54,11 @@ const deleteUserArtById = async(req,res)=>{
 // update user art by Id
 const updateUserArtById = async(req,res)=>{
     const getId = req.params._id
-    const {name, artist} = req.body
+    const {name, artist, desc, category, year} = req.body
     
     const updatedUserArt = await art.findByIdAndUpdate(
         getId,
-        {name, artist},
+        {name, artist, desc, category, year},
         {new:true}
     )
 
